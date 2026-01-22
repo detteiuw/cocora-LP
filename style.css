@@ -1,4 +1,4 @@
-/* Notion風デザイン + インタラクション強化 */
+/* ロゴサイズとレイアウトの修正 */
 
 :root{
   --bg: #ffffff;
@@ -6,7 +6,6 @@
   --muted: #6b7280;
   --line: #e5e7eb;
   --link: #111827;
-  /* ブランドカラー（ロゴに合わせて調整してください） */
   --accent: #2563eb; 
 }
 
@@ -43,22 +42,24 @@ img{
   }
 }
 
-/* HERO */
+/* HERO - ロゴを元の大きさと中央寄りに戻す */
 .hero{
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start; /* テキストは左寄せ */
   gap: 16px;
 }
 
 .hero-logo{
   width: 100%;
   display: flex;
-  justify-content: flex-start; /* 左寄せに変更（Notion風） */
+  justify-content: center; /* ロゴは中央に配置 */
+  margin-bottom: 8px;
 }
 
 .hero-logo img{
-  width: clamp(180px, 40vw, 240px);
+  /* 小さくなったのを修正：幅を広げました */
+  width: clamp(240px, 60vw, 520px); 
   height: auto;
 }
 
@@ -66,33 +67,23 @@ img{
   width: 100%;
   height: 1px;
   background: var(--line);
-  margin: 8px 0;
+  margin: 12px 0;
 }
 
-/* リード文の強調 */
 .lead{
   font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.75;
   margin-bottom: 8px;
-  color: var(--text);
-}
-
-.lead p{
-  margin-bottom: 8px;
 }
 
 /* SECTION */
-.section{
-  margin-top: 52px;
-}
+.section{ margin-top: 52px; }
 
 .section h2{
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 730;
   margin: 0 0 16px;
-  /* ほんの少しだけアクセントを付ける場合 */
-  border-bottom: 1px solid transparent; 
 }
 
 .section h3{
@@ -113,10 +104,9 @@ li{ margin: 8px 0; }
 .note{
   color: var(--muted);
   font-size: 0.9rem;
-  margin-top: -8px;
 }
 
-/* BULLETS (Cards) */
+/* BULLETS */
 .bullets{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -128,43 +118,25 @@ li{ margin: 8px 0; }
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 20px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-
-.bullet:hover{
-  border-color: var(--muted);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.bullet p{ margin-bottom: 0; }
 
 /* COMPANY INFO */
 .company{
   margin-top: 20px;
-  background: #f9fafb; /* 軽く背景を敷いて視認性を上げる */
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 20px;
+  background: #fdfdfd;
 }
 
-.company-item{ padding: 4px 0; }
-
-/* CTA Area */
+/* CTA - QRコードとボタンの配置修正 */
 .cta{
   margin-top: 24px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.line-btn{
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.line-btn:hover{
-  transform: translateY(-2px);
-  opacity: 0.9;
+  align-items: center; /* 中央に揃えてバランスを取る */
+  gap: 24px;
+  width: 100%;
 }
 
 .line-btn img{
@@ -172,10 +144,16 @@ li{ margin: 8px 0; }
   width: auto;
 }
 
+.line-qr{
+  margin: 0;
+  text-align: center; /* テキストも中央に */
+}
+
 .line-qr img{
-  width: 150px;
+  width: 180px; /* QRを少し大きく見やすく */
   border: 1px solid var(--line);
   border-radius: 12px;
+  margin: 0 auto;
 }
 
 .line-qr figcaption{
@@ -197,11 +175,4 @@ li{ margin: 8px 0; }
   font-size: 0.85rem;
 }
 
-a{
-  color: var(--accent);
-  text-decoration: none;
-}
-
-a:hover{
-  text-decoration: underline;
-}
+a{ color: var(--accent); text-decoration: none; }
