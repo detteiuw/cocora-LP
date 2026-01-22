@@ -223,3 +223,38 @@ a{
   color: var(--muted);
   font-size: 0.9rem;
 }
+
+/* ===== Readability improvements ===== */
+
+/* 本文の行幅を少しだけ制限（Notionに近い） */
+.hero,
+.section{
+  max-width: 720px;
+}
+
+/* リード文（冒頭文）を少しだけ強調 */
+.lead{
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 14px;
+}
+
+/* 見出し直下に呼吸を作る */
+.section h2 + p{
+  margin-top: 6px;
+}
+
+/* 箇条書きの読みやすさ改善 */
+ul{
+  line-height: 1.75;
+}
+
+/* カード内テキストの詰まりを防ぐ */
+.bullet p{
+  margin-bottom: 0;
+}
+
+/* セクション間のリズム調整 */
+.section{
+  margin-top: 52px;
+}
